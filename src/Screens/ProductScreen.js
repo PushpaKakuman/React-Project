@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Row, Col, Image, Button, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Row, Col, Image, Button, Card, ListGroup } from 'react-bootstrap';
 import Rating from '../components/Rating';
 import products from '../products'
 
 function ProductScreen() {
     const { id } = useParams();
-    const product = products.find((p) => p._id === Number(id))
+    const product = products.find((p) => p._id == Number(id))
     return (
         <div>
             <Link to='/' className='btn btn-light m-3'>Go Back </Link>
             <Row>
                 <Col md={6}>
-                    <Image src={product.image} alt={product.name} fluid />
+                    <Image src={product.image} alt={product.name} />
                 </Col>
                 <Col md={3}>
                     
