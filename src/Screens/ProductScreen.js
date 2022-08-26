@@ -18,9 +18,9 @@ function ProductScreen() {
                     
                     <ListGroup variant="flash">
                         
-                        <ListGroupItem>
+                        <ListGroup.Item>
                             <h3>{product.name}</h3>
-                        </ListGroupItem>
+                        </ListGroup.Item>
 
                         <ListGroup.Item>
                             <Rating value={product.rating} text = {` ${product.numReviews} reviews`} color="#f8e825"/>
