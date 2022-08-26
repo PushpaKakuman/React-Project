@@ -6,7 +6,7 @@ import products from '../products'
 
 function ProductScreen() {
     const { id } = useParams();
-    const product = products.find((p) => p._id == Number(id))
+    const product = products.find((p) => p._id === Number(id))
     return (
         <div>
             <Link to='/' className='btn btn-light m-3'>Go Back </Link>
@@ -15,22 +15,24 @@ function ProductScreen() {
                     <Image src={product.image} alt={product.name} fluid />
                 </Col>
                 <Col md={3}>
+                    
                     <ListGroup variant="flash">
+                        
                         <ListGroupItem>
                             <h3>{product.name}</h3>
                         </ListGroupItem>
 
-                        <ListGroupItem>
+                        <ListGroup.Item>
                             <Rating value={product.rating} text = {` ${product.numReviews} reviews`} color="#f8e825"/>
-                        </ListGroupItem>
+                        </ListGroup.Item>
 
-                        <ListGroupItem>
+                        <ListGroup.Item>
                             Price : ${product.price}
-                        </ListGroupItem>
+                        </ListGroup.Item>
 
-                        <ListGroupItem>
+                        <ListGroup.Item>
                             Description : {product.description}
-                        </ListGroupItem>
+                        </ListGroup.Item>
 
                     </ListGroup>
                 </Col>
@@ -52,7 +54,7 @@ function ProductScreen() {
                     </ListGroup.Item>
 
                     <ListGroup.Item>
-                        <Button className='btn-block' disabled={product.countInStock == 0} type = "button">
+                        <Button className='btn-block' disabled={product.countInStock === 0} type = "button">
                             Add to Cart
                         </Button>
                     </ListGroup.Item>
